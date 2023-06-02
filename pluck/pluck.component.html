@@ -1,0 +1,37 @@
+<div class="container my-3">
+    <h1>Pluck Operator</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Ex-01</strong>
+            <hr>
+            <p class="bg-light py-2 px-3 border rounded">
+                <strong>Pluck:</strong>
+            </p>
+            <br>
+            <table class="table">
+                <tr>
+                  <th>Name</th>
+                </tr>
+                <tr *ngFor="let item of data">
+                  <td>{{item}}</td>
+                </tr>
+              </table>
+        </div>
+        <div class="col-md-6">
+            <strong>Ex-02</strong>
+            <hr>
+            <p class="bg-light py-2 px-3 border rounded">
+                <strong>Pluck by Nested Property</strong>
+            </p>
+            <br>
+            <table class="table">
+                <tr>
+                  <th>Job Titles</th>
+                </tr>
+                <tr *ngFor="let item of data2">
+                  <td>{{item}}</td>
+                </tr>
+              </table>
+        </div>
+    </div>
+</div>

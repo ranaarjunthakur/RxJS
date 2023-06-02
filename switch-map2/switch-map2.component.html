@@ -1,0 +1,65 @@
+<div class="container my-3">
+    <div class="d-flex justify-content-between">
+        <h1>Switch Map with Searching Functionality.</h1>
+        <form class="example-form">
+            <!-- <span class="my-2">Search Countries</span> -->
+            <mat-form-field  appearance="fill">
+                <input type="text" placeholder="Country" matInput [formControl]="countryControl" [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredVaules | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5>Search Data</h5>
+            <form #searchForm="ngForm">
+                <div class="my-2">
+                    <input ngModel name="searchTerm" autocomplete="off" required class="form-control form-control-lg" type="text">
+                </div>
+            </form>
+        
+            <br>
+            <br>
+            <hr>
+            <div class="result d-flex justify-content-between my-3">
+                <h5>Searching Results</h5>
+                <span class="text-muted rounded fw-bold">{{searchResultCount}} Result Found</span>
+            </div>
+        </div>
+       
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <!-- <th scope="col">Picture</th> -->
+                        <th scope="col">Title</th>
+                        <th scope="col">User Id</th>
+                        <th scope="col">Body</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of searchResults;  index as i">
+                        <th scope="row">{{item.id}}</th>
+                        <!-- <td><img src="{{item.thumbnailUrl}}" alt="" width="120"></td> -->
+                        <td>
+                            <p>{{item.title}}</p>
+                        </td>
+                        <td>
+                            <p>{{item.userId}}</p>
+                        </td>
+                        <td>
+                            <p>{{item.body}}</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>

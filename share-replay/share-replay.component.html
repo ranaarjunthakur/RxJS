@@ -1,0 +1,66 @@
+<div class="container my-3">
+    <h1>ShareReplay</h1>
+    <div class="row my-2">
+        <hr>
+        <div class="col-md-4">  
+             <h4 class="fw-bold text-primary"><strong>Product-</strong>jewellery</h4>
+            <div *ngFor="let item of jewellery | async" class="card" style="width: 18rem;">
+                <img src="{{item.image}}" class="card-img-top img-thumbnail" width="50">
+                <div class="card-body">
+                  <h5 class="card-title text-success fw-bold">{{item.category}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <div class="d-flex justify-content-between">
+                    <span><strong>Price: </strong>{{item.price}}</span>
+                    <a class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <h4 class="fw-bold text-primary"><strong>Product-</strong> mens clothing</h4>
+            <div *ngFor="let item of Mens | async" class="card" style="width: 18rem;">
+                <img src="{{item.image}}" class="card-img-top img-thumbnail" width="50">
+                <div class="card-body">
+                  <h5 class="card-title text-success fw-bold">{{item.category}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <div class="d-flex justify-content-between">
+                    <span><strong>Price: </strong>{{item.price}}</span>
+                    <a class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <h4 class="fw-bold text-primary"><strong>Product-</strong>Women Clothing</h4>
+            <div *ngFor="let item of Women | async" class="card" style="width: 18rem;">
+                <img src="{{item.image}}" class="card-img-top img-thumbnail" width="50">
+                <div class="card-body">
+                  <h5 class="card-title text-success fw-bold">{{item.category}}</h5>
+                  <p class="card-text">{{item.description}}</p>
+                  <div class="d-flex justify-content-between">
+                    <span><strong>Price: </strong>{{item.price}}</span>
+                    <a class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <hr>
+        <div class="row">
+            <h4 class="fw-bold text-center text-uppercase">All Products</h4>
+            <hr>
+            <div class="col-md-4 my-2" *ngFor="let data of allProducts | async">
+                <div  class="card" style="width: 18rem;">
+                    <img src="{{data.image}}" class="card-img-top img-thumbnail" width="50">
+                    <div class="card-body">
+                      <h5 class="card-title text-success fw-bold">{{data.category}}</h5>
+                      <p class="card-text">{{data.description}}</p>
+                      <div class="d-flex justify-content-between">
+                        <span><strong>Price: </strong>{{data.price}}</span>
+                        <a class="btn btn-primary">Buy Now</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

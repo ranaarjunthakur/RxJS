@@ -1,0 +1,30 @@
+<div class="container my-3">
+    <h1>Debounce Time & DistinctUntilChanged</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <strong class="text-primary">Debounce Time Ex-01</strong>
+            <hr>
+            <div class="mb-3 from-group row">
+                <label for="exampleFormControlInput1" class="form-label">Search</label>
+                <input #myInput type="text" class="form-control"  placeholder="Search.....">
+              </div>
+              <strong *ngIf="reqData !=null">Input Data:<small class="text-success">{{reqData}}</small></strong>
+        </div>
+        <div class="col-md-6">
+            <strong class="text-primary">DistinctUntilChanged  Ex-02</strong>
+            <hr>
+            <div class="mb-3 from-group row">
+                <label for="exampleFormControlInput1" class="form-label">Search</label>
+                <input #myInput2 type="text" class="form-control"  placeholder="Search.....">
+              </div>
+              <strong *ngIf="reqData2 !=null">Input Data:<small class="text-success">{{reqData2}}</small></strong>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="exampleFormControlInput1" class="form-label">Search</label>
+                <input class="form-control"  matInput id="search" type="text" placeholder="search Values...">
+            </div>
+        </div>
+    </div>
+</div>

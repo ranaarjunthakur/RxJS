@@ -1,0 +1,44 @@
+
+<div class="container my-3">
+    <h1 class="">Obervable Creating</h1>
+    <div class="row">
+        <div class="col-md-6">
+              <strong>Ex-01 (Manual Obervable Creating)</strong>
+              <hr>
+              <ul [ngClass]="techStatus == 'completed' ? 'completed' : techStatus =='error' ? 'error':''  " class="techlist " id = 'elContainer'>
+                <!-- <li>Angular</li>
+                <li>Javascript</li>
+                <li>Typescript</li>
+                <li>jQuery</li>
+                <li>Css</li> -->
+              </ul>
+        </div>
+        <div class="col-md-6">
+            <strong>Ex-02 (Custom Interval Observable)</strong>
+            <hr>
+            <ul [ngClass]="techStatus2 == 'completed' ? 'completed' : techStatus2 =='error' ? 'error':''  " class="techlist" id = 'elContainer2'>
+              <!-- <li>Angular</li>
+              <li>Javascript</li>
+              <li>Typescript</li>
+              <li>jQuery</li>
+              <li>Css</li> -->
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <strong>Ex-03 (Random  Name)</strong>
+                <br>
+             <p class="bg-light p-4  border rounded text-primary">
+                <strong>Random Names:</strong>
+                "cat","goat","dog","tiger"
+             </p>
+             <hr>
+             <p>Current Name: <strong class="text-success">{{names}}</strong></p>
+             <span [ngClass]="nameStatus == 'completed' ? 'badge  text-bg-success' : nameStatus == 'error' ? 'badge  text-bg-danger' : 'badge  text-bg-primary'"
+             class="badge  text-bg-success" >Success</span>
+            </div>
+        </div>
+        
+    </div>
+</div>

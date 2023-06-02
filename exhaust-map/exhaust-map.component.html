@@ -1,0 +1,55 @@
+<div class="container my-3">
+    <h1>ExhaushtMap</h1>
+    <h4>exhaustMap() — the “Do not disturb!” operator</h4>
+    <hr>
+    <div class="row">
+        <h4>Save Data</h4>
+        <hr>
+        <div class="col-md-3">
+            <button #addBtn  class="btn btn-primary">Save Data</button>
+        </div>
+        <div class="col-md-9">
+            <div *ngIf="fetching" class="text-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>  saving....
+            </div>
+            <ul class="techlist">
+                <li><strong> Save Request: </strong> {{num}}</li>
+            </ul>
+         </div>
+    </div>
+<hr>
+    <div class="row">
+        <h4>click to an saveRecord http POST request.</h4>
+        <div class="col-md-12">
+            <form [formGroup]="UpdateForm">
+                <div class="form-group">
+                  <label for="title">title</label>
+                  <input type="text" class="form-control" id="title" formControlName="title">
+                  <!-- error block -->
+                  <div class="error" *ngIf="submitted && UpdateForm.controls['title'].errors?.['required']">
+                    <sup>*</sup>Please enter your title
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="body">body</label>
+                  <input type="text" class="form-control" id="body" formControlName="body">
+                  <!-- error block -->
+                  <div class="error" *ngIf="submitted && UpdateForm.controls['body'].errors?.['required']">
+                      <sup>*</sup>Please enter your body
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="userId">userId</label>
+                  <input type="text" class="form-control" id="userId" formControlName="userId">
+                  <!-- error block -->
+                  <div class="error" *ngIf="submitted && UpdateForm.controls['userId'].errors?.['required']">
+                      <sup>*</sup>Please enter your userId
+                    </div>
+                </div>
+                <button class="mt-2" mat-raised-button color="accent" type="submit" (click)="btnSub$.next(true)">Add Record</button>
+              </form>
+        </div>
+    </div>
+</div>
